@@ -1,0 +1,6 @@
+{
+  "name": "AutoCare AI",
+  "description": "A high-fidelity full-stack automotive diagnostic telemetry and vehicle health monitoring dashboard powered by Gemini AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

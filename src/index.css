@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Custom glow utility animations for the telemetry UI */
+@keyframes pulse-glow-cyan {
+  0%, 100% { box-shadow: 0 0 5px rgba(34, 211, 238, 0.2); }
+  50% { box-shadow: 0 0 15px rgba(34, 211, 238, 0.6); }
+}
+
+@keyframes pulse-glow-green {
+  0%, 100% { box-shadow: 0 0 5px rgba(16, 185, 129, 0.2); }
+  50% { box-shadow: 0 0 15px rgba(16, 185, 129, 0.6); }
+}
+
+@keyframes pulse-glow-red {
+  0%, 100% { box-shadow: 0 0 5px rgba(239, 68, 68, 0.2); }
+  50% { box-shadow: 0 0 15px rgba(239, 68, 68, 0.6); }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.glow-cyan {
+  animation: pulse-glow-cyan 2s infinite ease-in-out;
+}
+
+.glow-green {
+  animation: pulse-glow-green 2s infinite ease-in-out;
+}
+
+.glow-red {
+  animation: pulse-glow-red 2s infinite ease-in-out;
+}
+
+.scanline::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}
+
+/* Scrollbar styles for dark automotive telemetry */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #070708;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f1f23;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2e2e34;
+}
